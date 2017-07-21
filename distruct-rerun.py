@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 from comline import ComLine
+from distruct import Distruct
 
 import sys
 
