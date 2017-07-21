@@ -14,7 +14,11 @@ class ComLine():
 							default=os.getcwd().rstrip(),
 							help="Provide a path to clumpak output"
 		)
-		
+		parser.add_argument("-k", "--cluster",
+							dest='k',
+							required=True,
+							help="Provide the best clustering value for clumpak run"
+		)
 		self.args = parser.parse_args()
 
 		#check if files exist
