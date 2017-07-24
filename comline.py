@@ -14,10 +14,15 @@ class ComLine():
 							default=os.getcwd().rstrip(),
 							help="Provide a path to clumpak output"
 		)
-		parser.add_argument("-k", "--cluster",
-							dest='k',
+		parser.add_argument("-K", "--maxK",
+							dest='maxk',
 							required=True,
-							help="Provide the best clustering value for clumpak run"
+							help="Provide the highest clustering value tested for clumpak run"
+		)
+		parser.add_argument("-k", "--minK",
+							dest='mink',
+							required=True,
+							help="Provide the lowest clustering value tested for clumpak run"
 		)
 		self.args = parser.parse_args()
 
