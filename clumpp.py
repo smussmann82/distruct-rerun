@@ -35,8 +35,8 @@ class Clumpp():
 		self.inds = self.linecount(self.clumppoutind)
 		self.pops = self.linecount(self.clumppoutpop)
 
-	def getMajorClusterRuns(self):
-		with open("MajorClusterRuns.txt", 'a') as mcruns:
+	def getMajorClusterRuns(self,mc):
+		with open(mc, 'a') as mcruns:
 			content = list()
 			with open(self.clusdir) as f:
 				content = f.readlines()
@@ -51,10 +51,17 @@ class Clumpp():
 
 	def copyFiles(self):
 		nd = self.makeDir()
-		newind = os.path.join(nd, self.oldind)
-		newpop = os.path.join(nd, self.oldpop)
+
+		np = self.oldpop + "." + self.k
+		newpop = os.path.join(nd, np)
+
+		ni = self.oldind + "." + self.k
+		newind = os.path.join(nd, ni)
+
 		copyfile(self.clumppoutind, newind)
 		copyfile(self.clumppoutpop, newpop)
+
+		return np,ni
 
 	def makeDir(self):
 		nd = os.path.join(self.wd, "best_results")

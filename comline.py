@@ -1,7 +1,7 @@
 from __future__ import print_function
 
 import argparse
-import os.path
+import os
 
 class ComLine():
 	'Class for implementing command line options'
@@ -24,6 +24,12 @@ class ComLine():
 							required=True,
 							help="Provide the lowest clustering value tested for clumpak run"
 		)
+		parser.add_argument("-m", "--mc",
+							dest='mc',
+							default="MajorClusterRuns.txt",
+							help="Provide file that will hold names of runs corresponding to the major clusters"
+							
+		)
 		self.args = parser.parse_args()
 
 		#check if files exist
@@ -31,6 +37,8 @@ class ComLine():
 
 		#check if directories exist
 		self.dirExists(self.args.directory)
+		if(os.path.isfile(self.args.mc) == True ):
+			os.remove(self.args.mc)
 
 
 	def exists(self, filename):

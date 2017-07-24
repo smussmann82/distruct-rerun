@@ -16,12 +16,12 @@ def main():
 		outfile = "K" + str(k) + ".ps"
 
 		c = Clumpp(input.args.directory, str(k))
-		c.copyFiles()
-		c.getMajorClusterRuns()
+		popq,indivq = c.copyFiles()
+		c.getMajorClusterRuns(input.args.mc)
 
 		d = Distruct(input.args.directory)
 		d.copyFiles()
-		d.writeDrawparams(drawp, c.oldpop, c.oldind, str(k), outfile, c.pops, c.inds)
+		d.writeDrawparams(drawp, popq, indivq, str(k), outfile, c.pops, c.inds)
 
 main()
 
