@@ -13,7 +13,9 @@ class Clumpp():
 
 		#Construct path to where files should reside
 		tempdir = "K=" + self.k
-		self.cdir = os.path.join(self.wd, tempdir, "MajorCluster", "CLUMPP.files")
+		self.mcdir = os.path.join(self.wd, tempdir, "MajorCluster")
+		self.clusdir = os.path.join(self.mcdir,"clusterFiles")
+		self.cdir = os.path.join(self.mcdir, "CLUMPP.files")
 
 		# check to see if directory exists
 		self.dirExists(self.cdir)
@@ -32,6 +34,20 @@ class Clumpp():
 		#find number of individuals and populations
 		self.inds = self.linecount(self.clumppoutind)
 		self.pops = self.linecount(self.clumppoutpop)
+
+	def getMajorClusterRuns(self):
+		with open("MajorClusterRuns.txt", 'a') as mcruns:
+			content = list()
+			with open(self.clusdir) as f:
+				content = f.readlines()
+			for line in content:
+				tlist = line.split(".")
+				tlist.pop(-1)
+				tlist.pop(-1)
+				tlist.append("stdout")
+				temp = ".".join(tlist)
+				mcruns.write(temp)
+				mcruns.write("\n")
 
 	def copyFiles(self):
 		nd = self.makeDir()

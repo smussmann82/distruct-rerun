@@ -17,6 +17,7 @@ def main():
 
 		c = Clumpp(input.args.directory, str(k))
 		c.copyFiles()
+		c.getMajorClusterRuns()
 
 		d = Distruct(input.args.directory)
 		d.copyFiles()
