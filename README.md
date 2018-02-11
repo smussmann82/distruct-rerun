@@ -13,7 +13,7 @@ This should produce a folder in your current directory named 1516030453.  Now, r
 ```
 distruct-rerun.py -d 1516030453/ -k 1 -K 12
 ```
-This should have produced a file named MajorClusterRuns.txt in the directory from which you executed distruct-rerun.py.  This file contains all of the names of the .stdout files produced by my admixturePipeline repository that correspond to each of the major clusters recovered by CLUMPAK.  Copy this file to the directory that contains your output files produced by the admixturePipeline, and cd into that directory.  You can now get the CV values produced by Admixture by running the following code:
+This should have produced a file named MajorClusterRuns.txt in the directory from which you executed distruct-rerun.py.  This file contains all of the names of the .stdout files produced by my admixturePipeline repository that correspond to each of the major clusters recovered by CLUMPAK.  **Copy this file to the directory that contains your output files produced by the admixturePipeline, and cd into that directory.**  You can now get the CV values produced by Admixture by running the following code:
 ```
 for file in `cat MajorClusterRuns.txt`; do grep CV $file >> cv_file.txt; done;
 ```
