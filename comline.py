@@ -30,6 +30,12 @@ class ComLine():
 							help="Provide file that will hold names of runs corresponding to the major clusters"
 							
 		)
+                parser.add_argument("-l", "--otl",
+							dest='otl',
+							default="AdmixturePopIdToPopName",
+							help="Provide file that will hold names of labels in the distruct plots. Default value works for ADMIXTURE output analyzed in CLUMPAK. Change value to pops.txt for manipulating STRUCTURE output that has been analyzed in CLUMPAK"
+
+                )
 		self.args = parser.parse_args()
 
 		#check if files exist

@@ -19,7 +19,7 @@ def main():
 		popq,indivq = c.copyFiles()
 		c.getMajorClusterRuns(input.args.mc)
 
-		d = Distruct(input.args.directory)
+		d = Distruct(input.args.directory, input.args.otl)
 		d.copyFiles()
 		d.writeDrawparams(drawp, popq, indivq, str(k), outfile, c.pops, c.inds)
 

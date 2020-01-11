@@ -7,11 +7,11 @@ import os
 class Distruct():
 	'Class for preparing distruct output from the output produced by clumpak'
 
-	def __init__(self,wd):
+	def __init__(self,wd,otl):
 		self.wd = wd
 		self.nd = os.path.join(self.wd, "best_results")
 
-		self.oldtoplabels = "AdmixturePopIdToPopName"
+		self.oldtoplabels = otl
 		self.oldbottomlabels = "bottomlabels"
 		self.toplabels = os.path.join(wd,self.oldtoplabels)
 
