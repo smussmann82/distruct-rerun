@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from comline import ComLine
+from distructComline import ComLine
 from distruct import Distruct
 from clumpp import Clumpp
 

@@ -1,5 +1,7 @@
 # distruct-rerun
 
+**NOTE: This package is deprecated and will no longer be updated. It is being merged with the admixturePipeline package. All future updates will be found at https://github.com/stevemussmann/admixturePipeline**
+
 This code was written to help streamline the process of re-running distruct on the major clusters that are found by CLUMPAK (http://clumpak.tau.ac.il/).  It is useful in tandem with my admixture_cv_sum repository (https://github.com/smussmann82/admixture_cv_sum) to determine the best K value for analysis in Admixture (https://www.genetics.ucla.edu/software/admixture/). **Please note that this code only runs properly on the output produced by CLUMPAK when it is provided output from ADMIXTURE runs.  STRUCTURE output analyzed by CLUMPAK is not currently supported, but I plan to add an option for this in the future.  It also assumes you have used my ADMIXTURE Pipeline for running ADMIXTURE (https://github.com/smussmann82/admixturePipeline)**
 
 ## Usage:
